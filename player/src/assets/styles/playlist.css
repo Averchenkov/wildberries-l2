@@ -1,0 +1,155 @@
+
+.playlist {
+    width: 77dvw;
+    margin: 0 auto;
+    border: none;
+    border-spacing: 0;
+    text-align: left;
+    table-layout: fixed;
+    padding-bottom: 300px;
+}
+.playlist__cover {
+    width: 56px;
+}
+.playlist__title {
+}
+.playlist__artist {
+    width: 16%;
+}
+.playlist__album {
+}
+.playlist__year {
+    width: 7%;
+}
+.playlist__genre {
+    width: 105px;
+}
+.playlist__duration {
+    width: 93px;
+}
+.playlist thead th {
+    /* padding: 10px 20px 10px 0; */
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--light-gray);
+}
+.playlist tbody td {
+    /* padding: 10px 20px 10px 0; */
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--dark-gray);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.playlist thead th:first-of-type, 
+.playlist tbody td:first-of-type {
+    padding: 0;
+}
+.playlist thead th:nth-last-of-type(2), 
+.playlist tbody td:nth-last-of-type(2) {
+    overflow: visible;
+
+}
+.playlist thead th:last-of-type, 
+.playlist tbody td:last-of-type {
+    text-align: right;
+    padding: 0;
+}
+.track-info {
+}
+
+.track-info__cover {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+}
+.track-info__control-btn {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 33px;
+    height: 33px;
+    background-color: var(--blue);
+    border-radius: 50%;
+    z-index: 1;
+    
+    &::after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        display: inline-block;
+        content: "";
+        
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.track-info__cover:hover .track-info__control-btn {
+    background-color: var(--light-blue);
+}
+.track-info__control-btn_pause::after {
+    background: url("../img/play.svg") center/contain no-repeat;
+    margin-left: 1.1px;
+}
+.track-info__cover:not(:hover) .track-info__control-btn_play {
+    background-color: var(--light);
+    border: 14px solid var(--blue);
+    animation: spin 0.3s linear alternate infinite;
+}
+@keyframes spin {
+    0% {
+        border-width: 14px;
+    }
+    100% {
+        border-width: 10px;
+    }
+}
+.track-info__img {
+    width: 100%;
+    height: 100%;
+}
+
+.track-info__title {
+}
+.track-info__artist {
+}
+.track-info__album {
+}
+.track-info__year {
+}
+.track-info__genre {
+}
+.track-info__duration {
+}
+
+:where(.track-info:hover, .track-info_current) {
+    background-color: var(--dark--hover);
+}
+
+:where(.track-info:hover, .track-info_current) .track-info__cover:hover .track-info__control-btn_play::after {
+    background: url("../img/pause.svg") center/contain no-repeat;
+}
+
+:where(.track-info:hover, .track-info_current) .track-info__img {
+    filter: brightness(0.6);
+}
+
+:where(.track-info:hover, .track-info_current) .track-info__control-btn {
+    display: block;
+}

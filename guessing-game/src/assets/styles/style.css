@@ -1,0 +1,63 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Segoe UI','Segoe WP',Roboto,Ubuntu,Oxygen,Cantarell,'Fira Sans','Helvetica Neue',Helvetica,'Lucida Grande','Droid Sans',Tahoma,'Microsoft Sans Serif',sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: rgb(233, 233, 233);
+}
+
+button, input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: none;
+    background-color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body, button, input, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 600px;
+    margin: 0 auto;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.input {
+    border: 2px solid #b3bcc5;
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    padding: 7px;
+    font-size: 16px;
+    line-height: 20px;
+}
+.input_error {
+    border-color: rgb(210, 73, 73);
+}
+.input:hover,
+.input:focus-within {
+    border-color: rgb(51, 118, 205);
+}
+.input input {
+    width: 100%;
+}
+.input label {
+    line-height: 1.35;
+    color: #919191;
+}

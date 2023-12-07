@@ -1,0 +1,95 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Segoe UI','Segoe WP',Roboto,Ubuntu,Oxygen,Cantarell,'Fira Sans','Helvetica Neue',Helvetica,'Lucida Grande','Droid Sans',Tahoma,'Microsoft Sans Serif',sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+body, button, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    margin: 20px;
+}
+
+.field {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 15px;
+
+}
+
+.diagram {
+    flex-basis: calc(50% - 20px);
+}
+
+.diagram__title {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.diagram__content {
+    height: 190px;
+    display: grid;
+    grid-template-rows: auto 10px;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    gap: 5px;
+}
+
+.diagram__column {
+    margin-top: auto;
+    margin-bottom: 0;
+    background-color: rgb(192, 192, 192);
+}
+
+.diagram__column_green {
+    background-color: green;
+}
+
+.diagram__column_red {
+    background-color: red;
+}
+
+.diagram__index {
+}
+
+.diagram__index_current {
+    background-color: brown;
+}
+
+.control {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-auto-rows: 50px;
+    grid-auto-flow: row;
+    gap: 5px;
+}
+.control__arrow {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+.control__text {
+    font-size: 28px;
+    line-height: 43px;
+}
+.arrow-up {
+    background: url(../img/arrow-up.svg) center/contain no-repeat;
+}
+.arrow-down {
+    background: url(../img/arrow-down.svg) center/contain no-repeat;
+}
+.arrow-right {
+    background: url(../img/arrow-right.svg) center/contain no-repeat;
+}
+.arrow-left {
+    background: url(../img/arrow-left.svg) center/contain no-repeat;
+}

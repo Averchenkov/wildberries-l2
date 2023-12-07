@@ -1,0 +1,47 @@
+:root {
+    --dark: #121212;
+    --dark--hover: #1E1E1E;
+    --light: #E6E6E6;
+    --light-gray: #939393;
+    --dark-gray: rgba(255,255,255,0.15);
+    --blue: #0070EF;
+    --light-blue: #00ACFF;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Segoe UI','Segoe WP',Roboto,Ubuntu,Oxygen,Cantarell,'Fira Sans','Helvetica Neue',Helvetica,'Lucida Grande','Droid Sans',Tahoma,'Microsoft Sans Serif',sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: var(--dark);
+    color: var(--light);
+}
+    
+button, input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: none;
+    background-color: inherit;
+}
+    
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+    
+body, button, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+    
+body {
+    /* width: 100dvw;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 400px auto; */
+    position: relative;
+    padding-top: 40px;
+}
+    
+

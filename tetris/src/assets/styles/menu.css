@@ -1,0 +1,111 @@
+.menu {
+    display: none;
+    position: absolute;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.30);
+    overscroll-behavior: contain;
+    overflow: hidden;
+}
+.menu_open {
+    display: flex;
+}
+.menu_end-game .menu__control {
+    display: none;
+}
+.menu_end-game .menu__congratulation {
+    display: flex;
+}
+.menu__content {
+    padding: 25px;
+    min-height: 600px;
+    width: 480px;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.20);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu__logo {
+    width: 230px;
+}
+.control {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-auto-rows: 50px;
+    grid-auto-flow: row;
+    gap: 5px;
+}
+.control__arrow {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+.control__text {
+    font-size: 28px;
+    line-height: 43px;
+}
+.arrow-up {
+    background: url(../img/arrow-up.svg) center/contain no-repeat;
+}
+.arrow-down {
+    background: url(../img/arrow-down.svg) center/contain no-repeat;
+}
+.arrow-right {
+    background: url(../img/arrow-right.svg) center/contain no-repeat;
+}
+.arrow-left {
+    background: url(../img/arrow-left.svg) center/contain no-repeat;
+}
+
+.menu__congratulation {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    font-size: 28px;
+    line-height: 42px;
+    padding: 0 50px;
+    text-align: center;
+}
+
+.menu__footer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.button {
+    display: none;
+    height: 52px;
+    padding: 0px 36px;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 700;
+
+    background: rgb(26, 115, 232);
+    color: white;
+    &:hover {
+        background-color: rgb(28, 97, 188);
+    }
+}
+.button_hollow {
+    background: white;
+    border: 1px solid rgb(26, 115, 232);
+    color: rgb(26, 115, 232);
+    &:hover {
+        background-color: rgb(237 245 255);
+    }
+}
+.button_show {
+    display: block;
+}

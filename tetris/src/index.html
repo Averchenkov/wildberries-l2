@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <script src="./js/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/menu.css">
+</head>
+<body>
+    <div id="tetris" class="tetris">
+        <main class="tetris__table">
+
+        </main>
+        <template id="tetris-cell">
+            <div class="tetris__cell"></div>
+        </template>
+        <aside class="tetris__information">
+            <div class="tetris__form">
+                <h2>Следующий</h2>
+                <div id="tetris-next" class="tetris__next">
+
+                </div>
+            </div>
+            <div class="tetris__form">
+                <h1>Cчет</h1>
+                <div class="tetris__result-form">
+                    <span id="tetris-score">0</span>
+                </div>
+                <h2>Уровень</h2>
+                <div class="tetris__result-form">
+                    <span id="tetris-level">1</span>
+                </div>
+                <h2>Линии</h2>
+                <div class="tetris__result-form">
+                    <span id="tetris-lines">0</span>
+                </div>
+            </div>
+            <div class="tetris__form">
+                <h2>Лучший</h2>
+                <div class="tetris__result-form">
+                    <span id="tetris-best">0</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div id="menu" class="menu">
+        <div class="menu__content">
+            <img src="./assets/img/logo.png" alt="tetris" class="menu__logo">
+            <div class="menu__control control">
+                <span class="control__arrow arrow-up"></span> <span class="control__text"> - покрутить</span> 
+                <span class="control__arrow arrow-down"></span> <span class="control__text"> - опустить</span> 
+                <span class="control__arrow arrow-right"></span> <span class="control__text"> - вправо</span> 
+                <span class="control__arrow arrow-left"></span> <span class="control__text"> - влево</span> 
+            </div>
+            <div class="menu__congratulation">
+                <div>Конец игры</div>
+                <div>Поздравляем, вы набрали <span id="points">1232</span> очков</div>
+            </div>
+            <div class="menu__footer">
+                <button id="menu-back-btn" class="button button_hollow">Назад</button>
+                <button id="menu-start-btn" class="button button_show">Старт</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

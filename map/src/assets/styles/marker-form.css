@@ -1,0 +1,57 @@
+.marker-form {
+    display: none;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 1000;
+    background-color: white;
+    width: 300px;
+
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.20);
+    overflow: hidden;
+
+    grid-template-rows: min-content auto min-content;
+    --paddingLeftRight: 16px
+}
+.marker-form_show {
+    display: grid;
+}
+.marker-form__header {
+    height: 150px;
+    width: 100%;
+    background-color: aqua;
+}
+.marker-form__content {
+    
+}
+.marker-form__info {
+    border-bottom: 1px solid gray;
+    padding: var(--paddingLeftRight);
+}
+.marker-form__name {
+    font-size: 24px;
+    line-height: 28px;
+}
+.marker-form__type {
+    font-size: 13px;
+    line-height: 16px;
+}
+.marker-form__description {
+    padding: var(--paddingLeftRight);
+    border-bottom: 1px solid gray;
+}
+.marker-form__color-list {
+    padding: var(--paddingLeftRight);
+    border-bottom: 1px solid gray;
+}
+.marker-form__footer {
+    padding: var(--paddingLeftRight);
+    display: flex;
+    justify-content: space-between;
+}
+.marker-form__delete-btn {
+}
+.marker-form__edit-btn {
+}

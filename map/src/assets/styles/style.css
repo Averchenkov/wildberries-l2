@@ -1,0 +1,217 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Segoe UI','Segoe WP',Roboto,Ubuntu,Oxygen,Cantarell,'Fira Sans','Helvetica Neue',Helvetica,'Lucida Grande','Droid Sans',Tahoma,'Microsoft Sans Serif',sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+button, input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: none;
+    background-color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body, button, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100dvw;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 400px auto;
+}
+
+.button-blue {
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 50px;
+    background: rgb(26, 115, 232);
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(28, 97, 188);
+    }
+}
+
+.button-hollow {
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 50px;
+    background: white;
+    border: 1px solid rgb(26, 115, 232);
+    color: rgb(26, 115, 232);
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(237 245 255);
+    }
+}
+
+.aside {
+    display: grid; 
+    grid-template-rows: min-content min-content auto min-content
+}
+
+.aside__search-form {
+    padding: 30px 20px;
+    border-bottom: 1px solid black;
+}
+.search {
+    position: relative;
+}
+.search__input {
+    transition: background .3s ease 0s;
+    width: 100%;
+    padding: 10px 52px 14px 20px;
+    margin: 0;
+    border: 1px solid #dadce0;
+    border-radius: 36px;
+    background: rgba(255,255,255,.2);
+    -webkit-appearance: none;
+    appearance: none;
+}
+.search__button {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    background: url(../img/search.svg);
+
+    display: block;
+    width: 24px;
+    height: 24px;
+    opacity: .5;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity .3s ease 0s;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.aside__title {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    margin: 5px;
+}
+
+.aside__add-marker-btn {
+    float: right;
+    width: 112px;
+    margin: 10px 20px 10px auto;
+}
+
+.marker {
+    padding: 20px;
+    cursor: pointer;
+}
+.marker__avatar {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 2px solid rgb(175, 175, 175);
+}
+.marker__info {
+    display: inline-block;
+}
+.marker__name {
+    font-size: 24px;
+    line-height: 28px;
+}
+.marker__type {
+    font-size: 13px;
+    line-height: 16px;
+}
+.marker__delete-btn {
+    cursor: pointer;
+    display: none;
+    float: right;
+    width: 25px;
+    height: 25px;
+    margin-top: 12px;
+    background: url(../img/delete.svg) no-repeat;
+    background-size: contain;
+    &:hover {
+        background: url(../img/delete-hover.svg) no-repeat;
+        background-size: contain;
+    }
+}
+.marker:hover > .marker__delete-btn {
+    display: inline-block;
+}
+
+
+.content {
+    position: relative;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+.leaflet-container.cursor-pointer {
+    cursor: pointer;
+}
+
+.color-list {
+    display: flex;
+    justify-content: space-between;
+}
+.color-list__item {
+    width: 32px;
+    height: 32px;
+}
+.color-list__item > input {
+    display: none;
+}
+.color-list__item span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(175, 175, 175);
+    border-radius: 50%;
+    background-color: currentColor;
+    cursor: pointer;
+}
+.color-list__item > input:checked + label span {
+    border-color: black;
+}
+.color-list__item_red {
+    color: red;
+}
+.color-list__item_blue {
+    color: blue;
+}
+.color-list__item_magneta {
+    color: #CB11AB;
+}
+.color-list__item_orange {
+    color: orange;
+}
+.color-list__item_green {
+    color: green;
+}
+.color-list__item_black {
+    color: black;
+}
+.color-list__item_white {
+    color: white;
+}

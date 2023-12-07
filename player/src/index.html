@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/player.css">
+    <link rel="stylesheet" href="./assets/styles/slider.css">
+    <link rel="stylesheet" href="./assets/styles/playlist.css">
+
+    <script type="module" src="./js/main.js" defer></script>
+    <script src="./js/spectum.js" defer></script>
+    <link rel="icon" href="./assets/img/logo.svg" type="image/svg+xml">
+    <title>Not Qobuz</title>
+</head>
+<body>
+    <table id="playlist" class="playlist">
+        <colgroup>
+            <col class="playlist__cover" />
+            <col class="playlist__title" />
+            <col class="playlist__artist" />
+            <col class="playlist__album" />
+            <col class="playlist__year" />
+            <col class="playlist__genre" />
+            <col class="playlist__duration" />
+          </colgroup>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Название</th>
+                <th>Артист</th>
+                <th>Альбом</th>
+                <th>Год</th>
+                <th>Жанр</th>
+                <th>Длительность</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <template id="track-info">
+            <tr class="track-info">
+                <td><div class="track-info__cover">
+                    <span class="track-info__control-btn track-info__control-btn_pause"></span>
+                    <img class="track-info__img">
+                </div></td>
+                <td><span class="track-info__title"></span></td>
+                <td><span class="track-info__artist"></span></td>
+                <td><span class="track-info__album"></span></td>
+                <td><span class="track-info__year"></span></td>
+                <td><span class="track-info__genre"></span></td>
+                <td><span class="track-info__duration"></span></td>
+            </tr>
+        </template>
+    </table>
+    
+    <div id="player" class="player">
+        <audio id="audio"></audio>  
+        <canvas id='canvas'></canvas>
+        <div class="player__content">
+            <input class="player__progress-bar slider" type="range" step="0.01" min="0" max="100" value="1">
+            <div class="player__track">
+                <div class="player__track-cover">
+                    <img class="player__img" src="./assets/img/cover/cover1.jpg">
+                </div>
+                <div class="player__track-info">
+                    <div class="player__track-title">Hey Big Brother (Single Version)</div>
+                    <div class="player__track-subtitle">Rare Earth - 20th Century Masters: The Millennium Collection: Best of Rare Earth</div>
+                </div>
+                <div class="player__track-time">
+                    <div class="player__track-current-time">00:40</div>
+                    <div class="player__track-duration">07:38</div>
+                </div>
+            </div>
+            <div class="player__control-panel">
+                <button class="player__button player__shuffle-btn"></button>
+                <button class="player__button player__previous-btn"></button>
+                <button class="player__button player__play-pause-btn player__play-pause-btn_play"></button>
+                <button class="player__button player__next-btn"></button>
+                <button class="player__button player__repeat-btn"></button>
+            </div>
+            <div class="player__settings">
+                <div class="player__settings-volume">
+                    <span class="player__volume-img"></span>
+                    <input class="player__volume-bar slider" type="range" min="0" max="1" step="0.01">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

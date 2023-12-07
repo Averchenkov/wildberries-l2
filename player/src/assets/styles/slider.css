@@ -1,0 +1,101 @@
+/*progress support*/
+.slider {
+    --range: calc(var(--max) - var(--min));
+    --ratio: calc((var(--value) - var(--min)) / var(--range));
+    --sx: calc(var(--ratio) * (100%));
+    -webkit-appearance: none;
+    background-color: transparent;
+    margin: 0;
+    cursor: pointer;
+}
+
+/*webkit*/
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--blue);
+    margin-top: calc(0.3em * 0.5 - 15px * 0.5);
+    opacity: 0;
+    position: relative;
+    transform: translateX(calc(-50% + var(--sx)));
+}
+.slider:hover::-webkit-slider-thumb {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb:hover {
+    border: 4px solid var(--blue);
+    background: var(--light);
+}
+
+
+.slider::-webkit-slider-runnable-track {
+    height: 0.3em;
+    background: linear-gradient(var(--blue), var(--blue)) 0/var(--sx) 100% no-repeat, var(--dark-gray);
+}
+
+
+/*mozilla*/
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--blue);
+    opacity: 0;
+}
+.slider:hover:-moz-range-thumb {
+    opacity: 1;
+}
+.slider::-moz-range-thumb:hover {
+    border: 4px solid var(--blue);
+    background: var(--light);
+}
+
+.slider::-moz-range-track {
+    height: 0.3em;
+    background: linear-gradient(var(--blue), var(--blue)) 0/var(--sx) 100% no-repeat, var(--dark-gray);
+}
+
+
+/*ms*/
+.slider::-ms-fill-upper {
+    background: transparent;
+    border-color: transparent;
+}
+
+.slider::-ms-fill-lower {
+    background: transparent;
+    border-color: transparent;
+}
+
+.slider::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--blue);
+    margin-top: 0;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+.slider::-ms-thumb {
+    opacity: 1;
+}
+.slider::-ms-thumb:hover {
+    border: 4px solid var(--blue);
+    background: var(--light);
+}
+
+.slider::-ms-track {
+    height: 0.3em;
+    background: var(--dark-gray);
+    box-sizing: border-box;
+}
+
+
+.slider::-ms-fill-lower {
+    height: 0.3em;
+    margin: -undefined 0 -undefined -undefined;
+    background: var(--blue);
+}

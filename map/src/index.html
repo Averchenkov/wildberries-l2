@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/modal.css">
+    <link rel="stylesheet" href="./assets/styles/marker-form.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <aside class="aside">
+        <div class="aside__search-form">
+            <div class="search">
+                <input id="search" type="text" class="search__input" placeholder="Поиск маркера">
+                <button class="search__button"></button>
+            </div>
+        </div>
+        <span class="aside__title">Список маркеров</span>
+        <div id="marker-list" class="aside__markers-list">
+        </div>
+        <template id="marker">
+            <div class="marker">
+                <span class="marker__avatar"></span>
+                <div class="marker__info">
+                    <div class="marker__name"></div>
+                    <div class="marker__type"></div>
+                </div>
+                <button class="marker__delete-btn"></button>
+            </div>
+        </template>
+        <button id="add-marker" class="aside__add-marker-btn button-blue">Добавить</button>
+    </aside>
+    <main class="content">
+        <div id="map" class="map"></div>
+        <div id="marker-form" class="marker-form">
+            <div class="marker-form__header"></div>
+            <div class="marker-form__content">
+                <div class="marker-form__info">
+                    <div class="marker-form__name"></div>
+                    <div class="marker-form__type"></div>
+                </div>
+                <div class="marker-form__description"></div>
+                <form class="marker-form__color-list color-list">
+                    <div class="color-list__item color-list__item_red">
+                        <input type="radio" name="markerColor" id="color-1">
+                        <label for="color-1"><span></span></label>
+                    </div>
+                    <div class="color-list__item color-list__item_blue">
+                        <input type="radio" name="markerColor" id="color-2">
+                        <label for="color-2"><span></span></label>
+                    </div>
+        
+                    <div class="color-list__item color-list__item_magneta">
+                        <input type="radio" name="markerColor" id="color-3">
+                        <label for="color-3"><span></span></label>
+                    </div>
+        
+                    <div class="color-list__item color-list__item_orange">
+                        <input type="radio" name="markerColor" id="color-4">
+                        <label for="color-4"><span></span></label>
+                    </div>
+        
+                    <div class="color-list__item color-list__item_green">
+                        <input type="radio" name="markerColor" id="color-5">
+                        <label for="color-5"><span></span></label>
+                    </div>
+        
+                    <div class="color-list__item color-list__item_black">
+                        <input type="radio" name="markerColor" id="color-6">
+                        <label for="color-6"><span></span></label>
+                    </div>
+        
+                    <div class="color-list__item color-list__item_white">
+                        <input type="radio" name="markerColor" id="color-7">
+                        <label for="color-7"><span></span></label>
+                    </div>
+                </form>
+            </div>
+            <div class="marker-form__footer">
+                <button class="marker-form__delete-btn button-hollow">Удалить</button>
+                <button class="marker-form__edit-btn button-blue">Редактировать</button>
+            </div>
+        </div>
+        <div id="create-marker" class="modal-create-marker">
+            <div class="modal-create-marker__window">
+                <div class="modal-create-marker_header">
+                    <span class="modal-create-marker__title">Укажите место</span>
+                    <button class="modal-create-marker__close-btn"></button>
+                </div>
+                <div class="modal-create-marker__form">
+                    <div class="modal-create-marker__input">
+                        <input id="marker-name" required>
+                        <label>Название</label>
+                    </div>
+
+                    <div class="modal-create-marker__input">
+                        <input id="marker-type" required value="">
+                        <label>Тип</label>
+                    </div>
+
+                    <div class="modal-create-marker__input">
+                        <input id="marker-description" required>
+                        <label>Описание</label>
+                    </div>
+
+                    <form class="color-list">
+                        <div class="color-list__item color-list__item_red">
+                            <input type="radio" name="markerColor" id="color-8">
+                            <label for="color-8"><span></span></label>
+                        </div>
+                        <div class="color-list__item color-list__item_blue">
+                            <input type="radio" name="markerColor" id="color-9">
+                            <label for="color-9"><span></span></label>
+                        </div>
+            
+                        <div class="color-list__item color-list__item_magneta">
+                            <input type="radio" name="markerColor" id="color-10">
+                            <label for="color-10"><span></span></label>
+                        </div>
+            
+                        <div class="color-list__item color-list__item_orange">
+                            <input type="radio" name="markerColor" id="color-11">
+                            <label for="color-11"><span></span></label>
+                        </div>
+            
+                        <div class="color-list__item color-list__item_green">
+                            <input type="radio" name="markerColor" id="color-12">
+                            <label for="color-12"><span></span></label>
+                        </div>
+            
+                        <div class="color-list__item color-list__item_black">
+                            <input type="radio" name="markerColor" id="color-13">
+                            <label for="color-13"><span></span></label>
+                        </div>
+            
+                        <div class="color-list__item color-list__item_white">
+                            <input type="radio" name="markerColor" id="color-14">
+                            <label for="color-14"><span></span></label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-create-marker__footer">
+                    <button class="modal-create-marker__save-btn button-blue">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
